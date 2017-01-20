@@ -914,6 +914,8 @@ static void *controller_thread_fn(void *arg)
 		s->freq_now = (s->freq_now + 1) % s->freq_len;
 		optimal_settings(s->freqs[s->freq_now], demod.rate_in);
 		rtlsdr_set_center_freq(dongle.dev, dongle.freq);
+// blah
+		fprintf(stderr,".....%2d.....\r",s->freq_now);
 		dongle.mute = BUFFER_DUMP;
 	}
 	return 0;
